@@ -55,9 +55,9 @@ class ErrorHandler(tornado.web.RequestHandler):
         msg = self.get_argument('msg', 'Error')
         bans = ["\"", "'", "[", "]", "_", "|", "import",
                 "os", "(", ")", "+", "-", "*", "/", "\\", "%", "="]
-        # for ban in bans:
-        #     if ban in msg:
-        #         self.finish("ORZ")
+        for ban in bans:
+            if ban in msg:
+                self.finish("ORZ")
         with open("error.html", 'w') as f:
             f.write("""<html>
                 <head>
@@ -65,6 +65,7 @@ class ErrorHandler(tornado.web.RequestHandler):
                 </head>
                 <body>%s</body>
                 </html>\n""" % msg)
+            f.flush()
         self.render("error.html")
 
 
