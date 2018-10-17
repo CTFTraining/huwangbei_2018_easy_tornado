@@ -12,6 +12,8 @@ RUN pip install \
 	touch /app/error.html && \
 	chmod 777 /app/error.html
 
+WORKDIR /app
+
 EXPOSE 5000
 
 ENTRYPOINT ["/usr/local/bin/python","/app/app.py"]

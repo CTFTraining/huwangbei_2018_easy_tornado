@@ -51,7 +51,6 @@ class FileHandler(tornado.web.RequestHandler):
 
 class ErrorHandler(tornado.web.RequestHandler):
     def get(self):
-        print(dir(self))
         msg = self.get_argument('msg', 'Error')
         bans = ["\"", "'", "[", "]", "_", "|", "import",
                 "os", "(", ")", "+", "-", "*", "/", "\\", "%", "="]
