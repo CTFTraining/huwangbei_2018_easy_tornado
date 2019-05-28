@@ -8,7 +8,7 @@ ADD ssti_tornado.py /app/app.py
 RUN pip install \
 	-i http://mirrors.aliyun.com/pypi/simple/ \
 	--trusted-host mirrors.aliyun.com \
-	-U tornado && \
+	-U tornado==5.1.1 && \
 	touch /app/error.html && \
 	chmod 777 /app/error.html
 
