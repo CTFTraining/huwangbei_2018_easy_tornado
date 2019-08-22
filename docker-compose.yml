@@ -7,6 +7,6 @@ services:
     build: .
     restart: always
     environment:
-      - FLAG=flag{glzjin_wants_a_girl_friend}
+      - FLAG=flag{test_flag}
     ports:
       - "127.0.0.1:8081:5000"
