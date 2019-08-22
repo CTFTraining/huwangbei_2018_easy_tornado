@@ -3,7 +3,7 @@ version: "2"
 services:
 
   web:
-    image: glzjin/huwangbei_2018_easy_tornado
+    image: ctftraining/huwangbei_2018_easy_tornado
     build: .
     restart: always
     environment:
