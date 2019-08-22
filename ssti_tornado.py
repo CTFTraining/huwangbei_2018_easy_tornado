@@ -7,9 +7,11 @@
 import tornado.ioloop
 import tornado.web
 import hashlib
+import os
+import uuid
 
 settings = {
-    "cookie_secret": 'M)Z.>}{O]lYIp(oW7$dc132uDaK<C%wqj@PA![VtR#geh9UHsbnL_+mT5N~J84*r',
+    "cookie_secret": str(uuid.uuid4()),
     "compiled_template_cache": False,
     'autoreload': True
 }
@@ -18,7 +20,7 @@ files = {
     "/welcome.txt": "render",
     "/hints.txt": "md5(cookie_secret+md5(filename))",
     "/flag.txt": "flag in /fllllllllllllag",
-    "/fllllllllllllag": "flag{this_flag_for_you!}",
+    "/fllllllllllllag": os.environ['FLAG'],
 }
 
 

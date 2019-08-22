@@ -3,8 +3,10 @@ version: "2"
 services:
 
   web:
-    # image: ctftraining/huwangbei_2018_easy_tornado
+    image: ctftraining/huwangbei_2018_easy_tornado
     build: .
     restart: always
+    environment:
+      - FLAG=flag{test_flag}
     ports:
       - "127.0.0.1:8081:5000"
